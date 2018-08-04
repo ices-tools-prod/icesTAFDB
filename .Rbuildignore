@@ -1,0 +1,12 @@
+.travis.yml
+README.md
+README.Rmd
+^.*\.Rproj$
+^\.Rproj\.user$
+^cran-comments\.md$
+codecov.yml
+^.*\.sln$
+^.*\.rxproj$
+^\.vs*$
+SQL/*
+README_files
