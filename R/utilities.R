@@ -31,15 +31,51 @@ taf_get <- function(uri, jwt = NULL) {
   # read url contents
   resp <-
     if (is.null(jwt)) {
-      httr::GET(uri)
+      httr::GET(uri, httr::verbose())
     } else {
       httr::GET(uri,
-                httr::add_headers("Authorization", paste("Bearer", jwt$token )))
+                httr::add_headers(Authorization = paste("Bearer", jwt$token)),
+                httr::verbose())
     }
 
   # return as list
   httr::content(resp)
 }
+
+
+
+taf_post <- function(uri, body = list(), jwt = NULL) {
+  if (getOption("icesTAFweb.messages"))
+    message("GETing ... ", uri)
+
+  # read url contents
+  resp <-
+    if (is.null(jwt)) {
+      httr::POST(uri,
+                 body = body,
+                 encode = "json",
+                 httr::verbose())
+    } else {
+      httr::POST(uri,
+                 body = body,
+                 encode = "json",
+                 httr::add_headers(Authorization = paste("Bearer", jwt$token)),
+                 httr::verbose())
+    }
+
+  # return as list
+  httr::content(resp)
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
