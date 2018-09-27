@@ -13,7 +13,7 @@
 getToken <- function(username) {
   # get user password
   password <- getPass::getPass(msg = paste0("ICES password for ", username, ":"))
-  x <- taf_webservice("getToken",
+  x <- taf_webservice("auth/getToken",
                       username = username,
                       password = password)
 
