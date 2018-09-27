@@ -38,6 +38,9 @@ taf_get <- function(uri, jwt = NULL) {
                 httr::verbose())
     }
 
+  # check return code
+  httr::stop_for_status(resp)
+
   # return as list
   httr::content(resp)
 }
