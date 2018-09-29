@@ -74,32 +74,26 @@ taf_post <- function(uri, body = list(), jwt = NULL) {
 
 
 
-
-
-
-
-
-
-
-
-taf_get2 <- function(uri) {
-  if (getOption("icesTAF.messages"))
-    message("GETing ... ", uri)
+taf_patch <- function(uri, body = list(), jwt = NULL) {
+  if (getOption("icesTAFweb.messages"))
+    message("PATCHing ... ", uri)
 
   # read url contents
-  resp <- try(httr::GET(uri))
-
-  # if this errored then there is probably no internet connection
-  if (inherits(resp, "try-error")) {
-    warning("Attempt to access webservice failed:\n", attr(resp, "condition"))
-    return(NULL)
-  } else
-  # check server is not down by inspecting response for internal server error message
-  if (httr::http_error(resp)) {
-    warning(#"Web service failure: the server is not accessible, please try again later.\n",
-            "http status message: ", httr::http_status(resp)$message, call. = FALSE)
-  }
+  resp <-
+    if (is.null(jwt)) {
+      httr::PATCH(uri,
+                  body = body,
+                  encode = "json",
+                  httr::verbose())
+    } else {
+      httr::PATCH(uri,
+                  body = body,
+                  encode = "json",
+                  httr::add_headers(Authorization = paste("Bearer", jwt$token)),
+                  httr::verbose())
+    }
 
   # return as list
   httr::content(resp)
 }
+
