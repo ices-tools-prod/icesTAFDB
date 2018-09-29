@@ -49,7 +49,7 @@ taf_get <- function(uri, jwt = NULL) {
 
 taf_post <- function(uri, body = list(), jwt = NULL) {
   if (getOption("icesTAFweb.messages"))
-    message("GETing ... ", uri)
+    message("POSTing ... ", uri)
 
   # read url contents
   resp <-
