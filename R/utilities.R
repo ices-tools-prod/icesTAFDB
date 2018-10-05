@@ -47,24 +47,22 @@ taf_get <- function(uri, jwt = NULL) {
 
 
 
-taf_post <- function(uri, body = list(), jwt = NULL) {
+taf_post <- function(uri, body = list(), jwt = NULL, verbose = TRUE) {
   if (getOption("icesTAFweb.messages"))
     message("POSTing ... ", uri)
 
+  # set up args
+  args <-
+    list(uri,
+         body = body,
+         encode = "json")
+  if (!is.null(jwt))
+    args <- c(args, list(httr::add_headers(Authorization = paste("Bearer", jwt$token))))
+  if (verbose)
+    args <- c(args, list(httr::verbose()))
+
   # read url contents
-  resp <-
-    if (is.null(jwt)) {
-      httr::POST(uri,
-                 body = body,
-                 encode = "json",
-                 httr::verbose())
-    } else {
-      httr::POST(uri,
-                 body = body,
-                 encode = "json",
-                 httr::add_headers(Authorization = paste("Bearer", jwt$token)),
-                 httr::verbose())
-    }
+  resp <- do.call(httr::POST, args)
 
   # return as list
   httr::content(resp)
