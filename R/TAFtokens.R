@@ -13,10 +13,12 @@
 getToken <- function(username) {
   # get user password
   password <- getPass::getPass(msg = paste0("ICES password for ", username, ":"))
-  x <- taf_webservice("auth/getToken",
-                      username = username,
-                      password = password)
 
-  x
+  # buld body and uri
+  body <- list(username = username, password = password)
+  uri <- taf_uri("auth/getToken")
+
+  # request token - force verbose = FALSE to hide paylad
+  taf_post(uri, body = body, verbose = FALSE)
 }
 
