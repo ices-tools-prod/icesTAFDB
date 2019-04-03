@@ -3,7 +3,7 @@
 taf_uri <- function(service, ...) {
   # set up api url
   query <- list(...)
-  scheme <- "http"
+  scheme <- "https"
 
   # return url
   httr::modify_url("",
