@@ -3,11 +3,11 @@ Version: 1.0-1
 Date: 2018-05-02
 Title: Transparent Assessment Framework (TAF) Web Services
 Authors@R: c(person("Colin", "Millar", role=c("aut","cre"), email="colin.millar@ices.dk"))
-Imports: httr, askPass
+Imports: httr, askpass
 Suggests: testthat
 Description: R interface to access the web services of the ICES Transparent Assessment
              Framework (TAF) web application <http://taf.ices.dk>.
 License: GPL (>= 2)
 URL: http://taf.ices.dk
 Encoding: UTF-8
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
