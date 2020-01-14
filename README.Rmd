@@ -56,5 +56,5 @@ To get a list of all the publicly available assessments on TAF use the function 
 ```{r}
 public_taf <- taf_assessments()
 # show a subset
-kable(head(public_taf)[c(1,10,17,20,22)])
+kable(head(public_taf)[c(1,10,17,20,22,9)])
 ```

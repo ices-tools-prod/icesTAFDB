@@ -58,12 +58,12 @@ public_taf <- taf_assessments()
 
 ``` r
 # show a subset
-kable(head(public_taf)[c(1,10,17,20,22)])
+kable(head(public_taf)[c(1,10,17,20,22,9)])
 ```
 
-| name           | html\_url                                   | activeYear | expertGroup | dataCategory |
-| :------------- | :------------------------------------------ | ---------: | :---------- | :----------- |
-| 2015\_rjm-347d | <https://github.com/ices-taf/2015_rjm-347d> |       2015 | WGEF        | 3.2          |
-| 2015\_had-iceg | <https://github.com/ices-taf/2015_had-iceg> |       2015 | NWWG        | 1            |
-| 2016\_cod-347d | <https://github.com/ices-taf/2016_cod-347d> |       2016 | WGNSSK      | 1            |
-| 2016\_ple-eche | <https://github.com/ices-taf/2016_ple-eche> |       2016 | WGNSSK      | 1            |
+| name           | html\_url                                   | activeYear | expertGroup | dataCategory | run\_status |
+| :------------- | :------------------------------------------ | ---------: | :---------- | :----------- | ----------: |
+| 2015\_rjm-347d | <https://github.com/ices-taf/2015_rjm-347d> |       2015 | WGEF        | 3.2          |           1 |
+| 2015\_had-iceg | <https://github.com/ices-taf/2015_had-iceg> |       2015 | NWWG        | 1            |           1 |
+| 2016\_cod-347d | <https://github.com/ices-taf/2016_cod-347d> |       2016 | WGNSSK      | 1            |           1 |
+| 2016\_ple-eche | <https://github.com/ices-taf/2016_ple-eche> |       2016 | WGNSSK      | 1            |           1 |
