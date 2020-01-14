@@ -1,0 +1,60 @@
+---
+output: 
+  github_document:
+    html_preview: false
+---
+
+[![Build Status](https://travis-ci.org/ices-tools-prod/icesTAFWeb.svg?branch=devel)](https://travis-ci.org/ices-tools-prod/icesTAFWeb)
+[![CRAN Status](http://r-pkg.org/badges/version/icesTAFWeb)](https://cran.r-project.org/package=icesTAFWeb)
+[![CRAN Monthly](http://cranlogs.r-pkg.org/badges/icesTAFWeb)](https://cran.r-project.org/package=icesTAFWeb)
+[![CRAN Total](http://cranlogs.r-pkg.org/badges/grand-total/icesTAFWeb)](https://cran.r-project.org/package=icesTAFWeb)
+
+[<img align="right" alt="ICES Logo" width="17%" height="17%" src="http://ices.dk/_layouts/15/1033/images/icesimg/iceslogo.png">](http://ices.dk)
+
+```{r, setup, show = FALSE}
+library(knitr)
+library(icesTAFWeb)
+```
+
+icesTAFWeb
+=======
+
+icesTAFWeb Functions to support the creation of ICES Fisheries Overviews, ....
+
+icesTAFWeb is implemented as an [R](https://www.r-project.org) package 
+<!-- and available on [CRAN](https://cran.r-project.org/package=icesTAFWeb). -->
+and available on GitHub 
+
+Installation
+------------
+
+icesTAFWeb can be installed from GitHub using the `install_github` command from the
+`remotes` package:
+
+```R
+library(remotes)
+install_github("ices-tools-prod/icesTAFWeb")
+```
+
+Usage
+-----
+
+For a summary of the package:
+
+```R
+library(icesTAFWeb)
+?icesTAFWeb
+```
+
+Examples
+--------
+
+## Download a list of public TAF assessments
+
+To get a list of all the publicly available assessments on TAF use the function `taf_assessments()`
+
+```{r}
+public_taf <- taf_assessments()
+# show a subset
+kable(head(public_taf)[c(1,10,17,20,22)])
+```
