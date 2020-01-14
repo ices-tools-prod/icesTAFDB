@@ -15,7 +15,22 @@
 #' jwt
 #' }
 taf_assessments <- function(year, stock, type, what) {
-  out <- taf_webservice("assessments")
+
+  # build api call
+  if (!missing(stock) && missing(year)) {
+    stop("stock can only be supplied if year is supplied.")
+  }
+
+  api <- "assessments"
+  if (!missing(year)) api <- paste0(api, "/", year)
+  if (!missing(stock)) api <- paste0(api, "/", stock)
+
+  out <- taf_webservice(api)
+
+  # if getting one result...
+  if (!is.null(names(out))) {
+    out <- list(out)
+  }
 
   out <-
     do.call(
@@ -23,7 +38,8 @@ taf_assessments <- function(year, stock, type, what) {
       lapply(out,
         function(x) {
           x <- c(x[names(x) != "stockDb"], x$stockDb)
-          as.data.frame(x)
+          x[sapply(x, is.null)] <- NA #  !! this implies a bug in the web service
+          data.frame(x)
         }
       )
     )

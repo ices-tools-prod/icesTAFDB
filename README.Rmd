@@ -58,3 +58,11 @@ public_taf <- taf_assessments()
 # show a subset
 kable(head(public_taf)[c(1,10,17,20,22,9)])
 ```
+
+if you want to get the list of assessments / analyses available for a particular stock in a given year, use
+
+```{r}
+rjm2015 <- taf_assessments(year = 2015, stock = "rjm-347d")
+# show a subset
+kable(head(rjm2015)[c(1,10,17,20,22,9)])
+```
