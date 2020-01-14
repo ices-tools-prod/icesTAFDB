@@ -3,12 +3,11 @@
 taf_uri <- function(service, ...) {
   # set up api url
   query <- list(...)
-  scheme <- "https"
 
   # return url
   httr::modify_url("",
-                   scheme = scheme,
-                   hostname = getOption("icesTAFweb.hostname"),
+                   scheme = getOption("icesTAFWeb.scheme"),
+                   hostname = getOption("icesTAFWeb.hostname"),
                    path = service,
                    query = if (length(query) == 0) NULL else query)
 }

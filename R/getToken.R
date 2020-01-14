@@ -9,10 +9,10 @@
 #' jwt <- getToken("colin")
 #' jwt
 #' }
-#' @importFrom getPass getPass
+#' @importFrom askpass askpass
 getToken <- function(username) {
   # get user password
-  password <- getPass::getPass(msg = paste0("ICES password for ", username, ":"))
+  password <- askpass::askpass(msg = paste0("ICES password for ", username, ":"))
 
   # buld body and uri
   body <- list(username = username, password = password)
