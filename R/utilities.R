@@ -5,11 +5,12 @@ taf_uri <- function(service, ...) {
   query <- list(...)
 
   # return url
-  httr::modify_url("",
-                   scheme = getOption("icesTAFWeb.scheme"),
-                   hostname = getOption("icesTAFWeb.hostname"),
-                   path = service,
-                   query = if (length(query) == 0) NULL else query)
+  httr::modify_url(
+    "",
+    scheme = getOption("icesTAFWeb.scheme"),
+    hostname = getOption("icesTAFWeb.hostname"),
+    path = service,
+    query = if (length(query) == 0) NULL else query)
 }
 
 
@@ -24,7 +25,7 @@ taf_webservice <- function(service, jwt = NULL, ...) {
 
 
 taf_get <- function(uri, jwt = NULL) {
-  if (getOption("icesTAFweb.messages"))
+  if (getOption("icesTAFWeb.messages"))
     message("GETing ... ", uri)
 
   # read url contents
@@ -33,7 +34,7 @@ taf_get <- function(uri, jwt = NULL) {
       httr::GET(uri, httr::verbose())
     } else {
       httr::GET(uri,
-                httr::add_headers(Authorization = paste("Bearer", jwt$token)),
+                httr::authenticate("", jwt$token),
                 httr::verbose())
     }
 
@@ -47,18 +48,22 @@ taf_get <- function(uri, jwt = NULL) {
 
 
 taf_post <- function(uri, body = list(), jwt = NULL, verbose = TRUE) {
-  if (getOption("icesTAFweb.messages"))
+  if (getOption("icesTAFWeb.messages"))
     message("POSTing ... ", uri)
 
   # set up args
   args <-
-    list(uri,
-         body = body,
-         encode = "json")
-  if (!is.null(jwt))
-    args <- c(args, list(httr::add_headers(Authorization = paste("Bearer", jwt$token))))
-  if (verbose)
+    list(
+      uri,
+      body = body,
+      encode = "json"
+    )
+  if (!is.null(jwt)) {
+    args <- c(args, list(httr::authenticate("", jwt$token)))
+  }
+  if (verbose) {
     args <- c(args, list(httr::verbose()))
+  }
 
   # read url contents
   resp <- do.call(httr::POST, args)
@@ -72,7 +77,7 @@ taf_post <- function(uri, body = list(), jwt = NULL, verbose = TRUE) {
 
 
 taf_patch <- function(uri, body = list(), jwt = NULL) {
-  if (getOption("icesTAFweb.messages"))
+  if (getOption("icesTAFWeb.messages"))
     message("PATCHing ... ", uri)
 
   # read url contents
@@ -86,11 +91,10 @@ taf_patch <- function(uri, body = list(), jwt = NULL) {
       httr::PATCH(uri,
                   body = body,
                   encode = "json",
-                  httr::add_headers(Authorization = paste("Bearer", jwt$token)),
+                  httr::authenticate("", jwt$token),
                   httr::verbose())
     }
 
   # return as list
   httr::content(resp)
 }
-

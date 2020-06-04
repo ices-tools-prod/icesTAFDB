@@ -12,7 +12,7 @@
 #' @importFrom askpass askpass
 getToken <- function(username) {
   # get user password
-  password <- askpass::askpass(msg = paste0("ICES password for ", username, ":"))
+  password <- askpass::askpass(paste0("ICES password for ", username, ":"))
 
   # buld body and uri
   body <- list(username = username, password = password)
@@ -21,4 +21,3 @@ getToken <- function(username) {
   # request token - force verbose = FALSE to hide paylad
   taf_post(uri, body = body, verbose = FALSE)
 }
-
