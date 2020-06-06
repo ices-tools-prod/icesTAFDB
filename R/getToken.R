@@ -12,12 +12,12 @@
 #' @importFrom askpass askpass
 getToken <- function(username) {
   # get user password
-  password <- askpass::askpass(paste0("ICES password for ", username, ":"))
+  password <- ices_pass(paste0("ICES password for ", username, ": "))
 
   # buld body and uri
   body <- list(username = username, password = password)
   uri <- taf_uri("auth/getToken")
 
-  # request token - force verbose = FALSE to hide paylad
+  # request token - force verbose = FALSE to hide payload (password)
   taf_post(uri, body = body, verbose = FALSE)
 }

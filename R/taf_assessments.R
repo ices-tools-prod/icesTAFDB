@@ -14,7 +14,7 @@
 #' assessments <- taf_assessments()
 #' jwt
 #' }
-taf_assessments <- function(year, stock, type, what = NULL, jwt = NULL) {
+taf_assessments <- function(year, stock, type, what = NULL) {
 
   # build api call
   if (!missing(stock) && missing(year)) {
@@ -29,7 +29,7 @@ taf_assessments <- function(year, stock, type, what = NULL, jwt = NULL) {
   if (!missing(stock)) api <- paste0(api, "/", stock)
   if (!is.null(what)) api <- paste0(api, "/", what)
 
-  out <- taf_webservice(api, jwt)
+  out <- taf_webservice(api)
 
   # if getting one result...
   if (!is.null(names(out))) {

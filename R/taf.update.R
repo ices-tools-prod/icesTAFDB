@@ -12,7 +12,7 @@
 #' jwt
 #' }
 #' @importFrom getPass getPass
-taf.update <- function(message, jwt, path = ".") {
+taf.update <- function(message, path = ".") {
   # create a repo object
   files <- dir(path, pattern = "*.(R|Rmd)$", recursive = TRUE)
 
@@ -33,6 +33,5 @@ taf.update <- function(message, jwt, path = ".") {
       CommitMessage = message)
 
   taf_patch(taf_uri(paste0("jwt/update/", repoName)),
-            body = body,
-            jwt = jwt)
+            body = body)
 }
