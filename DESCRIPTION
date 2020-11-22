@@ -13,13 +13,11 @@ Authors@R:
 Description: R interface to access the web services of the ICES
     Transparent Assessment Framework (TAF) web application
     <http://taf.ices.dk>.
-License: FILE
+License: GPL-2
 URL: http://taf.ices.dk
 Imports:
     httr,
     jsonlite,
-    keyring,
-    getPass,
-    utils
+    icesConnect
 Encoding: UTF-8
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1

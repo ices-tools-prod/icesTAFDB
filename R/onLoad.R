@@ -1,15 +1,18 @@
 
 
+.options.setup <- function(local = FALSE) {
+  if (local) {
+    options(icesTAFWeb.scheme = "http")
+    options(icesTAFWeb.hostname = "localhost:5012")
+  } else {
+    options(icesTAFWeb.scheme = "https")
+    options(icesTAFWeb.hostname = "taf.ices.dk/api")
+  }
+}
+
 .onLoad <- function(libname, pkgname) {
   # set some default TAF options
-  opts <-
-    c(icesTAFWeb.messages = "TRUE",
-      icesTAFWeb.hostname = "'taf.ices.dk'",
-      icesTAFWeb.scheme = "'https'")
-
-  for (i in setdiff(names(opts), names(options()))) {
-        eval(parse(text = paste0("options(", i, "=", opts[i], ")")))
-  }
+  .options.setup(local = TRUE)
 
   invisible()
 }

@@ -1,5 +1,5 @@
 ---
-output: 
+output:
   github_document:
     html_preview: false
 ---
@@ -21,9 +21,9 @@ icesTAFWeb
 
 icesTAFWeb Functions to support the creation of ICES Fisheries Overviews, ....
 
-icesTAFWeb is implemented as an [R](https://www.r-project.org) package 
+icesTAFWeb is implemented as an [R](https://www.r-project.org) package
 <!-- and available on [CRAN](https://cran.r-project.org/package=icesTAFWeb). -->
-and available on GitHub 
+and available on GitHub
 
 Installation
 ------------
@@ -51,18 +51,16 @@ Examples
 
 ## Download a list of public TAF assessments
 
-To get a list of all the publicly available assessments on TAF use the function `taf_assessments()`
+To get a list of all the publicly available projects on TAF use the
+function `taf_projects()`
 
 ```{r}
-public_taf <- taf_assessments()
+public_taf <- taf_projects()
 # show a subset
 kable(head(public_taf)[c(1,10,17,20,22,9)])
 ```
 
-if you want to get the list of assessments / analyses available for a particular stock in a given year, use
-
-```{r}
-rjm2015 <- taf_assessments(year = 2015, stock = "rjm-347d")
-# show a subset
-kable(head(rjm2015)[c(1,10,17,20,22,9)])
+# to build this github_document
+```r
+rmarkdown::render("README.Rmd")
 ```
