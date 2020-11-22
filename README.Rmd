@@ -55,9 +55,9 @@ To get a list of all the publicly available projects on TAF use the
 function `taf_projects()`
 
 ```{r}
-public_taf <- taf_projects()
+projects <- taf_projects()
 # show a subset
-kable(head(public_taf)[c(1,10,17,20,22,9)])
+
 ```
 
 # to build this github_document
