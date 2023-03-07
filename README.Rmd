@@ -4,36 +4,36 @@ output:
     html_preview: false
 ---
 
-[![Build Status](https://travis-ci.org/ices-tools-prod/icesTAFWeb.svg?branch=devel)](https://travis-ci.org/ices-tools-prod/icesTAFWeb)
-[![CRAN Status](http://r-pkg.org/badges/version/icesTAFWeb)](https://cran.r-project.org/package=icesTAFWeb)
-[![CRAN Monthly](http://cranlogs.r-pkg.org/badges/icesTAFWeb)](https://cran.r-project.org/package=icesTAFWeb)
-[![CRAN Total](http://cranlogs.r-pkg.org/badges/grand-total/icesTAFWeb)](https://cran.r-project.org/package=icesTAFWeb)
+[![Build Status](https://travis-ci.org/ices-tools-prod/icesTAFDB.svg?branch=devel)](https://travis-ci.org/ices-tools-prod/icesTAFDB)
+[![CRAN Status](http://r-pkg.org/badges/version/icesTAFDB)](https://cran.r-project.org/package=icesTAFDB)
+[![CRAN Monthly](http://cranlogs.r-pkg.org/badges/icesTAFDB)](https://cran.r-project.org/package=icesTAFDB)
+[![CRAN Total](http://cranlogs.r-pkg.org/badges/grand-total/icesTAFDB)](https://cran.r-project.org/package=icesTAFDB)
 
 [<img align="right" alt="ICES Logo" width="17%" height="17%" src="http://ices.dk/_layouts/15/1033/images/icesimg/iceslogo.png">](http://ices.dk)
 
 ```{r, setup, show = FALSE}
 library(knitr)
-library(icesTAFWeb)
+library(icesTAFDB)
 ```
 
-icesTAFWeb
+icesTAFDB
 =======
 
-icesTAFWeb Functions to support the creation of ICES Fisheries Overviews, ....
+icesTAFDB Functions to support the creation of ICES Fisheries Overviews, ....
 
-icesTAFWeb is implemented as an [R](https://www.r-project.org) package
-<!-- and available on [CRAN](https://cran.r-project.org/package=icesTAFWeb). -->
-and available on GitHub
+icesTAFDB is implemented as an [R](https://www.r-project.org) package 
+<!-- and available on [CRAN](https://cran.r-project.org/package=icesTAFDB). -->
+and available on GitHub 
 
 Installation
 ------------
 
-icesTAFWeb can be installed from GitHub using the `install_github` command from the
+icesTAFDB can be installed from GitHub using the `install_github` command from the
 `remotes` package:
 
 ```R
 library(remotes)
-install_github("ices-tools-prod/icesTAFWeb")
+install_github("ices-tools-prod/icesTAFDB")
 ```
 
 Usage
@@ -42,8 +42,8 @@ Usage
 For a summary of the package:
 
 ```R
-library(icesTAFWeb)
-?icesTAFWeb
+library(icesTAFDB)
+?icesTAFDB
 ```
 
 Examples

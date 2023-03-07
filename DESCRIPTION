@@ -1,23 +1,12 @@
-Package: icesTAFWeb
-Title: Transparent Assessment Framework (TAF) Web Services
-Version: 1.0.0.9000
-Date: 2020-06-04
-Authors@R:
-    c(person(given = "Colin",
-             family = "Millar",
-             role = c("aut", "cre"),
-             email = "colin.millar@ices.dk"),
-      person(given = "Arni",
-             family = "Magnusson",
-             role = "aut"))
-Description: R interface to access the web services of the ICES
-    Transparent Assessment Framework (TAF) web application
-    <http://taf.ices.dk>.
-License: GPL-2
+Package: icesTAFDB
+Version: 0.1-0
+Title: Transparent Assessment Framework (TAF) Database Web Services
+Authors@R: c(person("Colin", "Millar", role=c("aut","cre"), email="colin.millar@ices.dk"))
+Imports: httr, icesConnect
+Suggests: testthat
+Description: R interface to access the web services of the ICES Transparent Assessment
+             Framework (TAF) Database <http://taf.ices.dk>.
+License: GPL (>= 2)
 URL: http://taf.ices.dk
-Imports:
-    httr,
-    jsonlite,
-    icesConnect
 Encoding: UTF-8
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.3
