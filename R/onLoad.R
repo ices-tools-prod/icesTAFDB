@@ -12,7 +12,7 @@
 
 .onLoad <- function(libname, pkgname) {
   # set some default TAF options
-  .options.setup(local = TRUE)
+  .options.setup(local = FALSE)
 
   invisible()
 }
