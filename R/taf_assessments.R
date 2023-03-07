@@ -6,6 +6,7 @@
 #'             exploratory, etc.
 #' @param what should the function return results, scripts, or a summary,
 #'             Default is summary.
+#' @param jwt a token aquired by running getToken
 #'
 #' @return a named list
 #' @export

@@ -11,7 +11,7 @@
 #' jwt <- getToken("colin")
 #' jwt
 #' }
-#' @importFrom getPass getPass
+#' @importFrom openssl base64_encode
 taf.update <- function(message, jwt, path = ".") {
   # create a repo object
   files <- dir(path, pattern = "*.(R|Rmd)$", recursive = TRUE)

@@ -1,12 +1,5 @@
-.travis.yml
 README.md
 README.Rmd
-^.*\.Rproj$
-^\.Rproj\.user$
+LICENSE
 ^cran-comments\.md$
-codecov.yml
-^.*\.sln$
-^.*\.rxproj$
-^\.vs*$
-SQL/*
-README_files
+^R_devel$
