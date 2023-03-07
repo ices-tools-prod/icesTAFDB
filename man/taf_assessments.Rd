@@ -4,7 +4,7 @@
 \alias{taf_assessments}
 \title{get a list of public taf assessments}
 \usage{
-taf_assessments(year, stock, type, what)
+taf_assessments(year, stock, type, what = NULL, jwt = NULL)
 }
 \arguments{
 \item{year}{the year the assessments were conducted}
@@ -16,6 +16,8 @@ exploratory, etc.}
 
 \item{what}{should the function return results, scripts, or a summary,
 Default is summary.}
+
+\item{jwt}{a token aquired by running getToken}
 }
 \value{
 a named list

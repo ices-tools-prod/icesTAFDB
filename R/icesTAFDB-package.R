@@ -1,14 +1,14 @@
 #' @docType package
 #'
-#' @name icesTAFWeb-package
+#' @name icesTAFDB-package
 #'
-#' @aliases icesTAFWeb
+#' @aliases icesTAFDB
 #'
-#' @title Transparent Assessment Framework (TAF) Web Services
+#' @title Transparent Assessment Framework (TAF) Database Web Services
 #'
 #' @description
 #' R interface to access the web services of the ICES Transparent Assessment
-#' Framework (TAF) web application <http://taf.ices.dk>.
+#' Framework (TAF) Database <http://taf.ices.dk>.
 #'
 #'
 #' @author Colin Millar.
