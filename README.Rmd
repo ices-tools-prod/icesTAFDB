@@ -28,12 +28,11 @@ and available on GitHub
 Installation
 ------------
 
-icesTAFDB can be installed from GitHub using the `install_github` command from the
-`remotes` package:
+icesTAFDB can be installed from https://ices-tools-prod.r-universe.dev using 
+`install.packages`:
 
 ```R
-library(remotes)
-install_github("ices-tools-prod/icesTAFDB")
+install.packages("icesTAFDB", repos = c('https://ices-tools-prod.r-universe.dev', 'https://cloud.r-project.org'))
 ```
 
 Usage
@@ -52,12 +51,12 @@ Examples
 ## Download a list of public TAF assessments
 
 To get a list of all the publicly available projects on TAF use the
-function `taf_projects()`
+function `taf_assessments()`
 
 ```{r}
-projects <- taf_projects()
+assessments <- taf_assessments()
 # show a subset
-
+head(assessments)
 ```
 
 # to build this github_document

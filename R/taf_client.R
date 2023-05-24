@@ -2,34 +2,29 @@
 # webservice utilities
 
 #' @importFrom icesConnect ices_get_jwt
-taf_webservice <- function(service, ...,
-                          username = NULL,
-                          quiet = FALSE,
-                          verbose = FALSE) {
-
-  # form uri of webservice
-  uri <- taf_uri(service, ...)
-
-  # preform request
-  icesConnect::ices_get_jwt(
-    uri,
-    username = username,
-    retry = FALSE,
-    quiet = quiet,
-    verbose = verbose
-  )
+api_url <- function(dev = FALSE) {
+  if (dev) {
+    "https://localhost:7172"
+  } else {
+    "https://adminweb06.ices.dk/api"
+  }
 }
 
-taf_uri <- function(service, ...) {
-  # set up api url
-  query <- list(...)
+#' @importFrom httr parse_url build_url
+api <- function(service, dev = TRUE, ...) {
+  url <- paste0(api_url(dev = dev), "/", service)
+  url <- parse_url(url)
+  url$query <- list(...)
+  url <- build_url(url)
+  url
+}
 
-  # return url
-  httr::modify_url(
-    "",
-    scheme = getOption("icesTAFWeb.scheme"),
-    hostname = getOption("icesTAFWeb.hostname"),
-    path = service,
-    query = if (length(query) == 0) NULL else query
+#' @importFrom icesConnect ices_token
+get <- function(service, use_token = TRUE, verbose = TRUE, quiet = FALSE, dev = TRUE) {
+  ices_get_jwt(
+    api(service, dev = dev),
+    jwt = if (use_token) ices_token() else "",
+    verbose = verbose,
+    quiet = quiet
   )
 }
