@@ -10,5 +10,7 @@
 #' @export
 test <- function(use_token = TRUE, verbose = FALSE, quiet = FALSE, dev = FALSE) {
   out <- get("whoami", use_token = use_token, verbose = verbose, quiet = quiet, dev = dev)
-  content(out, simplifyVector = TRUE)
+  out <- content(out, simplifyVector = TRUE)
+  cat(out)
+  invisible(NULL)
 }
