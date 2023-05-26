@@ -12,8 +12,8 @@ Total](http://cranlogs.r-pkg.org/badges/grand-total/icesTAFDB)](https://cran.r-p
 
 # icesTAFDB
 
-icesTAFDB Functions to support the creation of ICES Fisheries Overviews,
-….
+icesTAFDB is an R interface to access the web services of the ICES
+Transparent Assessment
 
 icesTAFDB is implemented as an [R](https://www.r-project.org) package
 <!-- and available on [CRAN](https://cran.r-project.org/package=icesTAFDB). -->
