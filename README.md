@@ -10,11 +10,6 @@ Total](http://cranlogs.r-pkg.org/badges/grand-total/icesTAFDB)](https://cran.r-p
 
 [<img align="right" alt="ICES Logo" width="17%" height="17%" src="http://ices.dk/_layouts/15/1033/images/icesimg/iceslogo.png">](http://ices.dk)
 
-``` r
-library(knitr)
-library(icesTAFDB)
-```
-
 # icesTAFDB
 
 icesTAFDB Functions to support the creation of ICES Fisheries Overviews,

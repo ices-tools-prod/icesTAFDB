@@ -11,7 +11,7 @@ output:
 
 [<img align="right" alt="ICES Logo" width="17%" height="17%" src="http://ices.dk/_layouts/15/1033/images/icesimg/iceslogo.png">](http://ices.dk)
 
-```{r, setup, show = FALSE}
+```{r, setup, show = FALSE, echo=FALSE}
 library(knitr)
 library(icesTAFDB)
 ```
