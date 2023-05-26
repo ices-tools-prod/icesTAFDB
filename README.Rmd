@@ -21,14 +21,14 @@ icesTAFDB
 
 icesTAFDB Functions to support the creation of ICES Fisheries Overviews, ....
 
-icesTAFDB is implemented as an [R](https://www.r-project.org) package 
+icesTAFDB is implemented as an [R](https://www.r-project.org) package
 <!-- and available on [CRAN](https://cran.r-project.org/package=icesTAFDB). -->
-and available on GitHub 
+and available on GitHub
 
 Installation
 ------------
 
-icesTAFDB can be installed from https://ices-tools-prod.r-universe.dev using 
+icesTAFDB can be installed from https://ices-tools-prod.r-universe.dev using
 `install.packages`:
 
 ```R
@@ -48,16 +48,20 @@ library(icesTAFDB)
 Examples
 --------
 
-## Download a list of public TAF assessments
+## Test your connection to the DB
 
-To get a list of all the publicly available projects on TAF use the
-function `taf_assessments()`
+To test that you have the package set up correctly and have registered
+with ICES TAF, run `test()`
 
 ```{r}
-assessments <- taf_assessments()
-# show a subset
-head(assessments)
+test()
 ```
+
+in the case you have not registered, you will get the following message
+```{r}
+test(use_token = FALSE)
+```
+
 
 # to build this github_document
 ```r

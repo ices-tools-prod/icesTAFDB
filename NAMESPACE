@@ -2,6 +2,7 @@
 
 export(getMetaData)
 export(getRepositories)
+export(getRepositoryAccess)
 export(test)
 importFrom(glue,glue)
 importFrom(httr,build_url)

@@ -31,7 +31,7 @@ getRepositories <- function(dev = FALSE) {
 #'
 #' @export
 #' @importFrom httr content
-getRepositorAccess <- function(dev = FALSE) {
+getRepositoryAccess <- function(dev = FALSE) {
   out <- get("repositoryaccess", dev = dev, verbose = FALSE, quiet = TRUE)
   content(out, simplifyVector = TRUE)
 }
